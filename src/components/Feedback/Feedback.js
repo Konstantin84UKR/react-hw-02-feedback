@@ -39,7 +39,7 @@ export default class Feedback extends Component{
     }
 
     render(){
-        // пробовал разнести по разным файлам, но получаеться не так наглядно.
+        // пробовал разнести по разным файлам, но получается не так наглядно.
         // решил оставить все в одном классе 
         let statistic;
         if ((this.state.good + this.state.neutral + this.state.bad) > 0) {
