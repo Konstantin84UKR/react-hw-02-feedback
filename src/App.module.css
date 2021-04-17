@@ -1,0 +1,7 @@
+.app {
+  background-color: turquoise;
+  position: fixed;
+  /* top: 5%;
+  left: 5%; */
+  transform: translate(10%, 10%);
+}
