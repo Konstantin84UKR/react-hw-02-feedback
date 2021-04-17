@@ -14,7 +14,7 @@ export default class Feedback extends Component{
 
     incrementCounter(prevState,id) {
        // как динамически изменить стейт?
-       // например если Я знаю имя поля, но не прописываю изменение явно например вот так 
+       // например вот так 
        // result = {id: prevState.id + 1}  где id входяший параметр
 
        let result = {};
@@ -39,11 +39,10 @@ export default class Feedback extends Component{
     }
 
     render(){
-        
 
         let total = this.state.good + this.state.neutral + this.state.bad;
         let positivFeedback = this.state.good / total *100;
-        
+
         let statistic;
         if ((this.state.good + this.state.neutral + this.state.bad) > 0) {
             statistic = <div>
