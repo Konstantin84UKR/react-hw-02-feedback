@@ -14,7 +14,7 @@ export default class Feedback extends Component{
 
     incrementCounter(prevState,id) {
        // как динамически изменить стейт?
-       // например если Я знаю имя поля, но не прописываю изменение явно например вот так 
+       // например вот так 
        // result = {id: prevState.id + 1}  где id входяший параметр
 
        let result = {};
