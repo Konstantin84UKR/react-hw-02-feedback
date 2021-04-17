@@ -39,8 +39,11 @@ export default class Feedback extends Component{
     }
 
     render(){
-        // пробовал разнести по разным файлам, но получаеться не так наглядно.
-        // решил оставить все в одном классе 
+        
+
+        let total = this.state.good + this.state.neutral + this.state.bad;
+        let positivFeedback = this.state.good / total *100;
+        
         let statistic;
         if ((this.state.good + this.state.neutral + this.state.bad) > 0) {
             statistic = <div>
@@ -48,9 +51,9 @@ export default class Feedback extends Component{
                     <li className={style.li_item}>Good : {this.state.good}</li>
                     <li className={style.li_item}>Neutral : {this.state.neutral}</li>
                     <li className={style.li_item}>Bad : {this.state.bad}</li>
-                    <li className={style.li_item}>Total : {this.state.good + this.state.neutral + this.state.bad}</li>
+                    <li className={style.li_item}>Total : {total}</li>
                 </ul>
-                <h3 className={style.title}>Positiv feedback: {((this.state.good)/(this.state.good + this.state.neutral + this.state.bad) *100).toFixed(2)}%</h3>
+                <h3 className={style.title}>Positiv feedback: {positivFeedback.toFixed(2)}%</h3>
             </div>
           } else {
             statistic = <h3 className={style.title}>no feedback given</h3>
