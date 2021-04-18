@@ -13,29 +13,28 @@ export default class Feedback extends Component{
     }
 
     incrementCounter(prevState,id) {
-       // как динамически изменить стейт?
-       // например вот так 
-       // result = {id: prevState.id + 1}  где id входяший параметр
+   
+    //    let result = {};
+    //    switch (id) {
+    //        case 'good':
+    //         result = {good: prevState.good + 1}
+    //            break;
+    //        case 'neutral':
+    //         result = {neutral: prevState.neutral + 1}
+    //            break;
+    //        case 'bad':
+    //         result = {bad: prevState.bad + 1}
+    //            break;    
+    //        default:
+    //            break;
+    //    } 
 
-       let result = {};
-       switch (id) {
-           case 'good':
-            result = {good: prevState.good + 1}
-               break;
-           case 'neutral':
-            result = {neutral: prevState.neutral + 1}
-               break;
-           case 'bad':
-            result = {bad: prevState.bad + 1}
-               break;    
-           default:
-               break;
-       } 
+       let result = {[id]: prevState[id] + 1}
        return result;
     }
 
     handleClick =(id)=>{
-       this.setState(()=>this.incrementCounter(this.state,id))
+      this.setState(()=>this.incrementCounter(this.state,id))
     }
 
     render(){
